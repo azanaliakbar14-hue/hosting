@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hype Tiers - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">&#9889;</span>
+                <span class="logo-text">HYPE<span class="accent">TIERS</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ranking.html">Rankings</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <a href="signup.html" class="btn btn-primary active">Sign Up</a>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <span class="user-greeting">Welcome, <span id="userName"></span></span>
+                <button class="btn btn-outline" id="logoutBtn">Logout</button>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Sign <span class="accent">Up</span></h1>
+                    <p>Join the competition</p>
+                </div>
+                <form class="auth-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Choose a username" required minlength="3" maxlength="20" autocomplete="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6" autocomplete="new-password">
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">&#128065;</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required autocomplete="new-password">
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">&#128065;</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gamemode">Favorite Gamemode</label>
+                        <select id="gamemode" name="gamemode" required>
+                            <option value="" disabled selected>Select a gamemode</option>
+                            <option value="roleplay">Roleplay</option>
+                            <option value="racing">Racing</option>
+                            <option value="drift">Drift</option>
+                            <option value="deathmatch">Deathmatch</option>
+                            <option value="survival">Survival</option>
+                            <option value="heist">Heist</option>
+                        </select>
+                    </div>
+                    <div class="form-error" id="formError"></div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader" style="display:none;"></span>
+                    </button>
+                </form>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9889;</span>
+                    <span class="logo-text">HYPE<span class="accent">TIERS</span></span>
+                </div>
+                <p class="footer-copy">&copy; 2025 Hype Tiers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
