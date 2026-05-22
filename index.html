@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hype Tiers - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">&#9889;</span>
+                <span class="logo-text">HYPE<span class="accent">TIERS</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="ranking.html">Rankings</a></li>
+            </ul>
+            <div class="nav-auth" id="navAuth">
+                <a href="signin.html" class="btn btn-outline">Sign In</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="nav-user" id="navUser" style="display:none;">
+                <span class="user-greeting">Welcome, <span id="userName"></span></span>
+                <button class="btn btn-outline" id="logoutBtn">Logout</button>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="glitch" data-text="HYPE TIERS">HYPE TIERS</span>
+            </h1>
+            <p class="hero-subtitle">Dominate the leaderboard. Climb the ranks. Prove your skill.</p>
+            <div class="hero-actions">
+                <a href="ranking.html" class="btn btn-primary btn-lg">View Rankings</a>
+                <a href="signup.html" class="btn btn-outline btn-lg">Join Now</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat" id="statPlayers">
+                    <span class="stat-number" data-count="0">0</span>
+                    <span class="stat-label">Players</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Gamemodes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">&#8734;</span>
+                    <span class="stat-label">Competition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gamemodes Section -->
+    <section class="section gamemodes" id="gamemodes">
+        <div class="container">
+            <h2 class="section-title">Game<span class="accent">modes</span></h2>
+            <p class="section-subtitle">Choose your battleground and rise through the tiers</p>
+            <div class="gamemode-grid">
+                <!-- Roleplay -->
+                <div class="gamemode-card" data-mode="roleplay">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="3"/>
+                            <path d="M12 52c0-11 9-20 20-20s20 9 20 20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M32 36v8M28 40h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Roleplay</h3>
+                    <p class="gamemode-desc">Immerse yourself in a living world. Create your story, build your empire.</p>
+                </div>
+                <!-- Racing -->
+                <div class="gamemode-card" data-mode="racing">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="28" width="44" height="16" rx="4" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="20" cy="48" r="5" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="44" cy="48" r="5" stroke="currentColor" stroke-width="3"/>
+                            <path d="M18 28l4-12h20l4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="30" y1="16" x2="30" y2="28" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Racing</h3>
+                    <p class="gamemode-desc">Push the limits on the track. Speed, precision, and glory await.</p>
+                </div>
+                <!-- Drift -->
+                <div class="gamemode-card" data-mode="drift">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 44c8-16 16-8 24-24s16-8 16 4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M16 52c6-12 12-6 18-18s12-6 12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <circle cx="46" cy="24" r="4" stroke="currentColor" stroke-width="3"/>
+                            <path d="M8 48l6-4 6 4 6-4 6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Drift</h3>
+                    <p class="gamemode-desc">Master the art of controlled chaos. Style meets skill on every corner.</p>
+                </div>
+                <!-- Deathmatch -->
+                <div class="gamemode-card" data-mode="deathmatch">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 8v48M8 32h48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="32" cy="32" r="16" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+                            <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Deathmatch</h3>
+                    <p class="gamemode-desc">Last one standing wins. Pure combat, pure adrenaline.</p>
+                </div>
+                <!-- Survival -->
+                <div class="gamemode-card" data-mode="survival">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M32 10l4 12h12l-10 7 4 12-10-7-10 7 4-12-10-7h12z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                            <path d="M20 50h24M24 54h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Survival</h3>
+                    <p class="gamemode-desc">Outlast the odds. Scavenge, build, and fight to survive.</p>
+                </div>
+                <!-- Heist -->
+                <div class="gamemode-card" data-mode="heist">
+                    <div class="gamemode-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="24" width="36" height="28" rx="3" stroke="currentColor" stroke-width="3"/>
+                            <path d="M24 24V18a8 8 0 1116 0v6" stroke="currentColor" stroke-width="3"/>
+                            <circle cx="32" cy="38" r="5" stroke="currentColor" stroke-width="3"/>
+                            <line x1="32" y1="43" x2="32" y2="47" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="gamemode-title">Heist</h3>
+                    <p class="gamemode-desc">Plan the perfect score. Teamwork, strategy, and nerves of steel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title">Why <span class="accent">Hype Tiers</span>?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#127942;</div>
+                    <h3>Tier Rankings</h3>
+                    <p>Climb from Bronze to Champion. Every match matters in your journey to the top.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9878;</div>
+                    <h3>Fair Play</h3>
+                    <p>No fake players, no bots. Real competition with real players only.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128640;</div>
+                    <h3>Live Leaderboards</h3>
+                    <p>Track your progress and see where you stand against the competition in real time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">&#9889;</span>
+                    <span class="logo-text">HYPE<span class="accent">TIERS</span></span>
+                </div>
+                <p class="footer-copy">&copy; 2025 Hype Tiers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
